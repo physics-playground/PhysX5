@@ -2,6 +2,7 @@
 @call :CLEAN_EXIT
 @echo off
 
+cd /d "%~dp0"
 call "%~dp0\buildtools\packman\packman" init
 set "PYTHONPATH=%PM_MODULE_DIR%;%PYTHONPATH%"
 
