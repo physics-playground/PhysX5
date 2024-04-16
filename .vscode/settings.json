@@ -1,3 +1,6 @@
 {
-  "cmake.sourceDirectory": "M:/projects/PhysX5/physx/compiler/public"
+  "cmake.sourceDirectory": "M:/projects/PhysX5/physx/compiler/public",
+  "cSpell.words": [
+    "physx"
+  ]
 }
