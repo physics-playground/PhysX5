@@ -54,6 +54,8 @@ All definitions have a value of 1 or 0, use '#if' instead of '#ifdef'.
 Compiler defines, see http://sourceforge.net/p/predef/wiki/Compilers/
 */
 #if defined(_MSC_VER)
+#if _MSC_VER >= 1930
+	#define PX_VC 17
 #if _MSC_VER >= 1920
 	#define PX_VC 16
 #elif _MSC_VER >= 1910
@@ -73,13 +75,13 @@ Compiler defines, see http://sourceforge.net/p/predef/wiki/Compilers/
 #endif
 #elif defined(__clang__)
 #define PX_CLANG 1
-	#if defined (__clang_major__) 
+	#if defined (__clang_major__)
 		#define PX_CLANG_MAJOR __clang_major__
 	#elif defined (_clang_major)
 		#define PX_CLANG_MAJOR _clang_major
 	#else
 		#define PX_CLANG_MAJOR 0
-	#endif	
+	#endif
 #elif defined(__GNUC__) // note: __clang__ implies __GNUC__
 	#define PX_GCC 1
 #else
@@ -374,7 +376,7 @@ Unused attribute macro. Only on GCC for now.
 #if PX_GCC_FAMILY
 	#define PX_UNUSED_ATTRIBUTE __attribute__((unused))
 #else
-	#define PX_UNUSED_ATTRIBUTE 
+	#define PX_UNUSED_ATTRIBUTE
 #endif
 
 /**
